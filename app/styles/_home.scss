@@ -22,32 +22,107 @@ body {
 }
 
 header {
-    // height: 110px;
-    img {
-        width: 275px;
-        padding: 10px 0 0 10px;
+    border-bottom: 5px solid $banner; 
+    position: fixed;
+    z-index: 9999999;
+    background-color: white;
+    width: 100%;
+        img {
+        position: relative;
+        z-index: 9999999;
+        display: block;
+        width: 65%;
+        max-width: 285px;
+        margin: 10px 0 10px 10px;
         transition: all 0.3s ease-in-out;
         &:hover {
             opacity: 0.8;
         }
     }
+
+    #navicon {
+        top: 30px;
+        right: 20px;
+        position: fixed;
+        width: 35px;
+        height: 25px;
+        z-index: 999999;
+        // margin: 50px auto;
+        transition: all 0.2s ease-in-out;
+        cursor: pointer;
+        // overflow: hidden;
+        opacity: 1;
+        span {
+            display: block;
+            background: $sig-blue;
+            width: 85%;
+            height: 4px;
+            position: absolute;
+            border-radius: 5px;
+            transition: all 0.3s ease-in-out;
+            left: 0;
+        }   
+    }
+
+    #navicon span:nth-child(1) {
+      top: 0px;
+    }
+
+    #navicon span:nth-child(2),#navicon span:nth-child(3) {
+      top: 8px;
+    }
+
+    #navicon span:nth-child(4) {
+      top: 16px;
+    }
+
+    #navicon.open span:nth-child(1) {
+      top: 14px;
+      width: 0%;
+      left: 50%;
+    }
+
+    #navicon.open span:nth-child(2) {
+      -webkit-transform: rotate(45deg);
+      -moz-transform: rotate(45deg);
+      -o-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+
+    #navicon.open span:nth-child(3) {
+      -webkit-transform: rotate(-45deg);
+      -moz-transform: rotate(-45deg);
+      -o-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+    }
+
+    #navicon.open span:nth-child(4) {
+      top: 14px;
+      width: 0%;
+      left: 50%;
+    }
+
     nav {
-        float: right;
-        // width: 75%;
+        position: relative;
+        top: -200px;
+        opacity: 0;
+        z-index: 9;
+        transition: all 0.3s ease-in-out;
         ul {
-            text-align: right;
+            text-align: center;
             list-style-type: none;
-            // margin: 47px 0;
+            background-color: white;
             padding: 0;
             position: relative;
-            top: 50%;
-            transform: tranlateY(-50%);
+            margin: 0;
+            // top: 50%;
+            // transform: tranlateY(-50%);
             li {
                 cursor: pointer;
-                display: inline;
-                padding: 5px 30px;
+                display: block;
+                padding: 13px 10px;
                 a {
-                    font-size: 16px;
+                    font-size: 20px;
                     text-decoration: none;
                     color: $sig-blue;
                     transition: all 0.3s ease-in-out;                
@@ -61,27 +136,228 @@ header {
     }
 } 
 
+nav.open {
+    top: 0;
+    opacity: 1;
+    z-index: 9;
+    ul { 
+        border-top: 5px solid $banner;
+        border-bottom: 5px solid $banner;  
+        li{
+            a{
+
+            }
+        }
+    }
+}
+
 .landing-info {
+    // position: relative;
+    // top: 0;
     padding: 200px 0;
     text-align: center;
-    background-color: #f0f0f0;
+    background-color: $banner;
+    transition: all 0.3s ease-in-out;
     h1 {
-        font-size: 50px;
+        margin: 0 10px 40px;
+        font-size: 28px;
+        line-height: 40px;
         color: $sig-blue;
         text-transform: uppercase;
         letter-spacing: 0px;
         word-spacing: 5px;
         font-weight: 600;         
     }
-    h2 {
-            font-size: 25px;
+    .button {
+        position: relative;
+        background-color: $sig-gold;
+        width: 53%;
+        text-align: center;
+        margin: 0 auto;
+        border-radius: 5px;
+        padding: 15px 0;
+        font-size: 18px;
+        // color: white;
+        h2 {
             font-weight: 100;
-            color: $sig-gold;
             transition: all 0.3s ease-in-out;
             cursor: pointer;
-            &:hover {
-                color: gray;
-            }
-        }    
+        }        
+    }           
 }
-  
+
+.button a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 15px;
+}
+
+.below-header {
+    position: relative;
+    top: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.below-header.push {
+    top: 270px;
+}
+
+.subtitle-banner {
+    position: relative;
+    top: 0;
+    background-color: $banner;
+    padding: 10px 0 9px 0;
+        h2 {
+        margin: 0;
+        color: $sig-blue;
+        font-size: 18px;
+        // text-transform: uppercase;
+        padding-left: 20px;
+    }
+}
+
+.below-header p {
+    position: relative;
+    margin: 20px;
+    font-size: 14px;
+}
+
+p {
+    margin: 50px 20px 20px;
+    line-height: 30px;
+}
+
+// MEDIA QUERIES -------------------------------------
+
+// LARGE PHONE --------------------------------
+@media screen and (min-width: 350px) {
+
+}    
+
+// SMALL TABLET -------------------------------
+@media screen and (min-width: 480px) {
+
+}
+
+// LARGE TABLET -------------------------------
+@media screen and (min-width: 768px) {
+    #navicon {
+        display: none;
+    }
+
+    header {
+        border: none;
+        position: relative;
+        img {
+            float: left;
+            width: 275px;
+            padding: 10px 0 0 10px;
+            margin: 0;
+            transition: all 0.3s ease-in-out;
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+        .container {
+            display: none;
+        }
+        nav {
+            top: 0;
+            opacity: 1;
+            display: inherit;
+            float: right;
+            // width: 75%;
+            ul {
+                text-align: right;
+                list-style-type: none;
+                // padding: 0;
+                position: relative;
+                // top: 50%;
+                // transform: tranlateY(-50%);
+                li {
+                    cursor: pointer;
+                    display: inline;
+                    padding: 5px 15px;
+                    a {
+                        font-size: 16px;
+                        text-decoration: none;
+                        color: $sig-blue;
+                        transition: all 0.3s ease-in-out;                
+                        &:hover {
+                            text-decoration: none;
+                            color: $sig-gold;
+                        }
+
+                        span {
+                            color: $sig-gold;
+                        }
+                    }    
+                }
+            }    
+        }
+    } 
+
+    .landing-info {
+        padding: 200px 0;
+        text-align: center;
+        background-color: $banner;
+        h1 {
+            font-size: 50px;
+            line-height: 60px;
+            color: $sig-blue;
+            text-transform: uppercase;
+            letter-spacing: 0px;
+            word-spacing: 5px;
+            font-weight: 600;         
+        }
+        .button {
+            cursor: pointer;
+            width: 25%;  
+            font-size: 26px; 
+            transition: all 0.3s ease-in-out;
+            &:hover {
+                opacity: 0.8;
+            } 
+        } 
+    }
+
+    .subtitle-banner {
+        h2 {
+            font-size: 25px;
+            padding-left: 200px;
+        }
+    }
+
+    .below-header p {
+        font-size: 16px;
+        line-height: 35px;
+        margin: 30px 200px;
+    }
+}    
+
+// SMALL LAPTOP/DESKTOP -----------------------
+@media screen and (min-width: 992px) {
+    header {
+        nav {
+            ul {
+                li {
+                    padding: 5px 30px;
+                }
+            }    
+        }
+    }
+}       
+
+// MEDIUM LAPTOP/DESKTOP ----------------------
+@media screen and (min-width: 1200px) {
+
+}           
+
+// LARGE LAPTOP/DESKTOP -----------------------
+@media screen and (min-width: 1200px) {
+   
+} 
+
+@media screen and (min-width: 1400px) {
+              
+}      
