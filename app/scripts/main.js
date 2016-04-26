@@ -8,24 +8,26 @@ var landingInfoHeight = $('.landing-info').height();
 var theHeightMinusHeaderHeight = theHeight-headerHeight;
 var landingInfoHalf = landingInfoHeight/2;
 var finalEquation = theHeightMinusHeaderHeight/2-landingInfoHalf
+var buttonHeight = $('.button').height();
 
-$(document).ready(function(){    
+$(document).ready(function(){ 
+    // $('.landing-info .button a').css('height', buttonHeight);   
     $('#navicon').click(function(){
         $(this).toggleClass('open'); //(navicon transition)
         $('.menu').toggleClass('open'); //(adds nav menu)
         $('.below-header').toggleClass('push');
         // $('.landing-info').css('top', menuHeight+navPadding+navPadding);
-
     });
 
-    function updateContainer() {
-        $('header').css('height', headerHeight+5);
-        
+    function updateContainer() {       
         if ($(window).innerWidth() <= 751) {
             $('.landing-info').css('padding-top', finalEquation+headerHeight); //add headerHeight to account for fixed header
-            $('.landing-info').css('padding-bottom', theHeightMinusHeaderHeight/2-landingInfoHalf);//this = finalEquation which I only added so I could easily add headerHeight to padding-top
+            $('.landing-info').css('padding-bottom', theHeightMinusHeaderHeight/2-landingInfoHalf);
+            //this = finalEquation which I only added so I could easily add headerHeight to padding-top
+            $('header').css('height', headerHeight);
         } else {
             $('.landing-info').css('padding-top', 200);
+            $('header').css('height', headerHeight+navTextHeight/2);
         }
 
         $('nav ul').css('padding-top', navPadding);
@@ -41,6 +43,7 @@ $(document).ready(function(){
         
         console.log('theHeight', theHeight);
         console.log('headerHeight', headerHeight);
+        console.log('buttonHeight', buttonHeight);
         console.log('navPadding', navPadding);
         console.log('nav height', navPadding*2 + navTextHeight);
         console.log('landingInfoHeight', landingInfoHeight);

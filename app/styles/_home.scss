@@ -171,26 +171,42 @@ nav.open {
     .button {
         position: relative;
         background-color: $sig-gold;
-        width: 53%;
         text-align: center;
         margin: 0 auto;
         border-radius: 5px;
-        padding: 15px 0;
+        // padding: 0;
         font-size: 18px;
         // color: white;
-        h2 {
-            font-weight: 100;
-            transition: all 0.3s ease-in-out;
-            cursor: pointer;
-        }        
+        a {
+           color: white;
+           text-decoration: none;
+           padding: 15px 15px;
+           display: block;  
+            h2 {
+                font-weight: 100;
+                transition: all 0.3s ease-in-out;
+                cursor: pointer;
+            }
+        }      
     }           
 }
 
-.button a {
-    color: white;
-    text-decoration: none;
-    padding: 5px 15px;
+// .button a {
+//     width: 300px;
+// }
+
+.landing-info .button {
+    width: 200px;
 }
+
+// .button {
+//     a {
+//         color: white;
+//         text-decoration: none;
+//         padding: 15px 15px;
+//         display: block; 
+//     }   
+// }
 
 .below-header {
     position: relative;
@@ -198,13 +214,18 @@ nav.open {
     transition: all 0.3s ease-in-out;
 }
 
+hr {
+    display: none;
+}
+
 .below-header.push {
-    top: 270px;
+    top: 280px;
 }
 
 .subtitle-banner {
     position: relative;
     top: 0;
+    border-bottom: 2px solid $sig-gold;
     background-color: $banner;
     padding: 10px 0 9px 0;
         h2 {
@@ -223,8 +244,46 @@ nav.open {
 }
 
 p {
+    color: $sig-blue;
     margin: 50px 20px 20px;
-    line-height: 30px;
+    line-height: 30px;   
+}
+
+.testimonials p {
+    box-shadow: 5px 5px 5px gray;
+    background-color: $sig-blue;
+    padding: 10px;
+    color: white;
+    border-radius: 5px;
+    line-height: 25px;
+}
+
+.underline a {
+    text-decoration: underline;
+}
+
+.images {
+    padding: 50px 50px;
+    text-align: center;
+    display: block;
+    img {
+        width: 100%;
+        padding: 7px 0;
+    }
+}
+
+.below-header {
+    footer {
+        background-color: $banner;
+        position: relative;
+        p {
+            padding: 25px 0;
+            margin: 0;
+            font-size: 10px;
+            line-height: 15px;
+            text-align: center;
+        }
+    }    
 }
 
 // MEDIA QUERIES -------------------------------------
@@ -236,7 +295,14 @@ p {
 
 // SMALL TABLET -------------------------------
 @media screen and (min-width: 480px) {
-
+    .images {
+        padding: 50px 50px;
+        text-align: center;
+        img {
+            width: 70%;
+            padding: 7px 0;
+        }
+    }
 }
 
 // LARGE TABLET -------------------------------
@@ -246,12 +312,12 @@ p {
     }
 
     header {
-        border: none;
+        // border: none;
         position: relative;
         img {
             float: left;
             width: 275px;
-            padding: 10px 0 0 10px;
+            padding: 15px 0 0 15px;
             margin: 0;
             transition: all 0.3s ease-in-out;
             &:hover {
@@ -312,7 +378,7 @@ p {
         }
         .button {
             cursor: pointer;
-            width: 25%;  
+            width: 265px;  
             font-size: 26px; 
             transition: all 0.3s ease-in-out;
             &:hover {
@@ -322,18 +388,44 @@ p {
     }
 
     .subtitle-banner {
+        background-color: white;
+        border-bottom: none;
+        padding: 30px 0 20px 0;
         h2 {
             font-size: 25px;
-            padding-left: 200px;
+            padding-left: 75px;
         }
     }
 
     .below-header p {
         font-size: 16px;
         line-height: 35px;
-        margin: 30px 200px;
+        margin: 30px 75px;
     }
-}    
+
+    hr {
+        display: inherit;
+        border-top: 3px solid $sig-gold;
+        width: 60px;
+        float: left;
+        margin: 18px 0 0 75px;
+    } 
+
+    .images {
+        padding: 50px 25px;
+        text-align: center;
+        img {
+            width: 30%;
+            padding: 0 3px;
+        }
+    }
+
+    .below-header footer p {
+        font-size: 12px;
+    } 
+}  
+
+
 
 // SMALL LAPTOP/DESKTOP -----------------------
 @media screen and (min-width: 992px) {
@@ -346,11 +438,27 @@ p {
             }    
         }
     }
+
+    .images {
+        padding: 50px 50px;
+        text-align: center;
+        img {
+            width: 30%;
+            padding: 0 3px;
+        }
+    }
 }       
 
 // MEDIUM LAPTOP/DESKTOP ----------------------
 @media screen and (min-width: 1200px) {
-
+    .images {
+        padding: 50px 75px;
+        text-align: center;
+        img {
+            width: 30%;
+            padding: 0 3px;
+        }
+    }
 }           
 
 // LARGE LAPTOP/DESKTOP -----------------------
