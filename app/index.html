@@ -23,6 +23,9 @@
     <!-- endbuild -->
 
     <link href='http://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900' rel='stylesheet' type='text/css'>
+
+    <link href="styles/owl.carousel.css" rel="stylesheet">
+
   </head>
   <body class="fade-in">
     <!--[if lt IE 10]>
@@ -59,11 +62,19 @@
             <h2 class="button"><a href="pricing.html">Get a free quote!</a></h2>
         </section>
 
-        <section class="images">
+        <!-- <section class="images">
             <img src="images/window-cleaning-2.jpg">
             <img src="images/water-pole.jpg">
             <img src="images/clean-windows.jpg">
-        </section>
+        </section> -->
+
+        <div class="carousel-container">    
+            <div class="owl-carousel">
+                <img src="images/window-cleaning.jpg">
+                <img src="images/sig-window-1.jpg">
+                <img src="images/window-6.jpg">
+            </div>
+        </div>    
 
         <footer>
             <p>&copy 2016 Signature Window Cleaning || St. Croix Falls, WI 54024 || Twin Cities Metro - St. Paul, Minneapolis</p>
@@ -84,6 +95,7 @@
 
     
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+
     <script>
       (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
       function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
@@ -96,8 +108,12 @@
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
     <script src="/bower_components/jquery/dist/jquery.js"></script>
+
     <!-- endbower -->
     <!-- endbuild -->
+
+    <script src="scripts/owl.carousel.js"></script>
+    <script src="scripts/owl.carousel.min.js"></script>
     
     <!-- build:js scripts/plugins.js -->
     <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/affix.js"></script>

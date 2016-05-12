@@ -9,6 +9,8 @@ var theHeightMinusHeaderHeight = theHeight-headerHeight;
 var landingInfoHalf = landingInfoHeight/2;
 var finalEquation = theHeightMinusHeaderHeight/2-landingInfoHalf
 var buttonHeight = $('.button').height();
+var footerHeight = $('footer').height();
+var belowHeaderHeight = $('.below-header').height();
 
 $(document).ready(function(){ 
     // $('.landing-info .button a').css('height', buttonHeight);   
@@ -36,10 +38,15 @@ $(document).ready(function(){
         if ($(window).innerWidth() <= 751) {
             $('.subtitle-banner').css('top', headerHeight);
             $('.below-header p').css('top', headerHeight);
+            // $('.p-footer').css('top', 0);
         } else {
             $('.subtitle-banner').css('top', 0);
             $('.below-header p').css('top', 0);
         }
+
+        // if ($(window).innerWidth() >= 752) {
+        //     $('footer').css('top',theHeight-headerHeight-belowHeaderHeight);
+        // }
         
         console.log('theHeight', theHeight);
         console.log('headerHeight', headerHeight);
@@ -54,7 +61,47 @@ $(document).ready(function(){
 
     updateContainer();
 
+    $('#myAffix').affix({
+      offset: {
+        top: 100,
+        bottom: function () {
+          return (this.bottom = $('.footer').outerHeight(true))
+        }
+      }
+    })
+
     $(window).resize(function() {
         updateContainer();
     });
+
+    $('.owl-carousel').owlCarousel({
+        center:true,
+        loop:true,
+        margin:10,
+        nav:true,
+        navSpeed:1000,
+        dots:true,
+        dotsSpeed:1000,
+        autoplay: true,
+        autoplaySpeed:1000,
+        responsive:{
+            0:{
+                items:1
+            },
+            600:{
+                items:1
+            },
+            1000:{
+                items:1
+            }
+        }
+    })
+
+    $.each({
+        'next >>': this.next,
+        '<< prev': this.prev,
+    }, $.proxy(function(event, callback) {
+        this.$element.on(event + '.owl.carousel', handler(callback, event + '.owl.carousel'));
+    }, this));
+
 });        
