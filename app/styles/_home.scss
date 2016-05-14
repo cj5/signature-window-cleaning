@@ -17,6 +17,11 @@
     animation-duration: 0.4s;
 }
 
+.fade-in.slow {
+    animation-delay: 0.1s;
+    animation-duration: 0.7s;
+}
+
 body {
     font-family: "Montserrat", sans-serif; 
 }
@@ -27,6 +32,7 @@ header {
     z-index: 9999999;
     background-color: white;
     width: 100%;
+    min-height: 100px;
         img {
         position: relative;
         z-index: 9999999;
@@ -184,27 +190,37 @@ nav.open {
         word-spacing: 5px;
         font-weight: 600;         
     }
+
     .button {
+        color: $sig-gold;
+        cursor: pointer;
         position: relative;
-        background-color: $sig-gold;
+        background-color: white;
         border: 2px solid $sig-gold;
         text-align: center;
         margin: 0 auto;
         border-radius: 5px;
-        // padding: 0;
+        padding: 10px 20px;
+        transition: all 0.3s ease-in-out;
         font-size: 18px;
-        // color: white;
-        a {
-           color: white;
-           text-decoration: none;
-           padding: 15px 15px;
-           display: block;  
-            h2 {
-                font-weight: 100;
-                transition: all 0.3s ease-in-out;
-                cursor: pointer;
-            }
-        }      
+        
+        &:hover {
+            color: white;
+            background-color: $sig-gold;
+            text-decoration: none;
+        }
+
+        // a {
+        //    color: $sig-gold;
+        //    text-decoration: none;
+        //    padding: 15px 15px;
+        //    display: block;  
+        //     h2 {
+        //         font-weight: 100;
+        //         transition: all 0.3s ease-in-out;
+        //         cursor: pointer;
+        //     }
+        // }      
     }           
 }
 
@@ -269,6 +285,25 @@ p {
     line-height: 30px;   
 }
 
+.images-caption {
+    text-align: center;
+    margin-bottom: 0px;
+    h2 {
+        color: $sig-blue;
+        font-size: 30px;
+        margin: 0;
+        text-transform: uppercase;
+        word-spacing: 10px;
+    }
+}
+
+.images-caption {
+    img {
+        width: 75px;
+        margin-top: 30px;
+    }
+}
+
 .testimonials p {
     box-shadow: 5px 5px 5px gray;
     background-color: $sig-blue;
@@ -292,21 +327,48 @@ p {
     }
 }
 
-.below-header {
-    footer {
-
-        background-color: $banner;
-        position: relative;
-        top: 80px;
-        p {
-            padding: 25px 0;
-            margin: 0 10px;
-            font-size: 10px;
-            line-height: 15px;
-            text-align: center;
-        }
-    }    
+.below-header footer p {
+    position: relative;
+    top: 0px;        
+    margin: 0;
+    background-color: $banner;
+    position: relative;
+    padding: 25px 10px;
+    margin: 0;
+    font-size: 10px;
+    line-height: 15px;
+    text-align: center;   
 }
+
+.contact {
+    text-align: center;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    // h3 {
+    //     margin-top: 40px;
+    //     padding: 20px;
+    //     font-size: 30px;
+    //     color: $sig-blue;
+    //     text-transform: uppercase; 
+    // } 
+    .phone {
+        font-size: 24px;
+        color: $sig-blue;
+        padding-top: 80px;
+        margin: 0;
+    } 
+    img {
+        margin: 0 5px 0;
+        opacity: 0.7;
+        cursor: pointer;
+        max-width: 50px;
+        transition: 0.3s all ease-in-out; 
+        &:hover {
+            opacity: 1.0;
+        }
+    } 
+}
+
 
 // MEDIA QUERIES -------------------------------------
 
@@ -372,7 +434,7 @@ p {
                     display: inline;
                     padding: 5px 15px;
                     a {
-                        font-size: 16px;
+                        font-size: 14px;
                         text-decoration: none;
                         color: $sig-blue;
                         transition: all 0.3s ease-in-out;                
@@ -404,20 +466,8 @@ p {
             font-weight: 600;         
         }
         .button {
-            cursor: pointer;
-            width: 265px;  
-            font-size: 26px; 
-            transition: all 0.3s ease-in-out;
-            &:hover {
-                opacity: 0.8;
-                // background-color: white;
-                // border: 2px solid $sig-blue;
-                a:hover {
-                    // color: $sig-gold;
-
-                }
-            } 
-        } 
+            font-size: 22px; 
+        }
     }
 
     .landing-info a {
@@ -431,7 +481,7 @@ p {
         h2 {
             font-size: 25px;
             padding-left: 75px;
-        }
+        } 
     }
 
     .below-header p {
@@ -452,7 +502,7 @@ p {
         padding: 50px 25px;
         text-align: center;
         img {
-            width: 30%;
+            width: 100px;
             padding: 0 3px;
         }
     }
@@ -460,9 +510,30 @@ p {
     .below-header footer p {
         font-size: 12px;
     } 
+
+    .images-caption {
+        margin-bottom: 75px;
+        h2 {
+            font-size: 40px;
+        }
+    }
 }  
 
+.contact {
+    margin-bottom: 80px;
+    .phone {
+        font-size: 28px;
+        padding-top: 20px;
 
+    } 
+    img {
+        margin: 0 5px 0;
+        max-width: 50px; 
+        &:hover {
+            opacity: 1.0;
+        }
+    } 
+}
 
 // SMALL LAPTOP/DESKTOP -----------------------
 @media screen and (min-width: 992px) {
@@ -471,6 +542,9 @@ p {
             ul {
                 li {
                     padding: 5px 30px;
+                    a {
+                        font-size: 16px;
+                    }
                 }
             }    
         }
