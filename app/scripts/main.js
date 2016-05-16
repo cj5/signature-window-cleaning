@@ -38,10 +38,13 @@ $(document).ready(function(){
         if ($(window).innerWidth() <= 751) {
             $('.subtitle-banner').css('top', headerHeight);
             $('.below-header p').css('top', headerHeight);
+            $('.contact').css('top', headerHeight);
+            $('.contact').css('margin-top', 0);
             // $('.p-footer').css('top', 0);
         } else {
             $('.subtitle-banner').css('top', 0);
             $('.below-header p').css('top', 0);
+            $('.contact').css('top', 0);
         }
 
         // if ($(window).innerWidth() >= 752) {
