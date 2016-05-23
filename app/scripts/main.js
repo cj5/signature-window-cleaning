@@ -1,6 +1,6 @@
 var theHeight = $(window).height();
 var logoHeight = $('.logo').height();
-var headerHeight = logoHeight+30;
+var headerHeight = 100; //logoHeight+30
 var navTextHeight = $('nav a').height();
 var menuHeight = $('.menu').height();
 var navPadding = headerHeight/2 - navTextHeight/2;
@@ -59,7 +59,8 @@ $(document).ready(function(){
         console.log('landingInfoHeight', landingInfoHeight);
         console.log('landingInfoHalf', landingInfoHalf);
         console.log('theHeightMinusHeaderHeight', theHeightMinusHeaderHeight);
-        console.log('theHeightMinusHeaderHeight-landingInfoHalf', theHeightMinusHeaderHeight-landingInfoHalf);         
+        console.log('theHeightMinusHeaderHeight-landingInfoHalf', theHeightMinusHeaderHeight-landingInfoHalf);
+        console.log('navTextHeight', navTextHeight);         
     }
 
     updateContainer();
@@ -76,6 +77,8 @@ $(document).ready(function(){
     $(window).resize(function() {
         updateContainer();
     });
+
+    //image carousel 
 
     $('.owl-carousel').owlCarousel({
         center:true,

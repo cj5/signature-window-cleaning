@@ -148,7 +148,7 @@ nav.open {
     z-index: 9;
     ul { 
         border-top: 5px solid $banner;
-        border-bottom: 5px solid $banner;  
+        // border-bottom: 5px solid $banner;  
         li{
             a{
 
@@ -246,6 +246,7 @@ nav.open {
     transition: all 0.3s ease-in-out;
     .test-link {
         text-decoration: underline;
+        color: $sig-blue;
     }
 }
 
@@ -363,6 +364,8 @@ p {
         cursor: pointer;
         max-width: 50px;
         transition: 0.3s all ease-in-out; 
+        -webkit-backface-visibility: hidden;
+        -webkit-filter: blur(0px);
         &:hover {
             opacity: 1.0;
         }
@@ -437,6 +440,7 @@ footer {
                 list-style-type: none;
                 // padding: 0;
                 position: relative;
+                clear: both;
                 // top: 50%;
                 // transform: tranlateY(-50%);
                 li {
